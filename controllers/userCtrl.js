@@ -1,7 +1,6 @@
-
-const Users = require('../models/userModels');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+import Users from '../models/userModels.js'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 const userCtrl = {
     registerUser: async (req, res) => {
@@ -68,4 +67,4 @@ const userCtrl = {
 
 }
 
-module.exports = userCtrl;
+export default userCtrl;

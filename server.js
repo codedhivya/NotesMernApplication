@@ -1,17 +1,23 @@
-require("dotenv").config()
-const express = require('express');
-const cors = require('cors');
-const connectDB = require('./db.js')
-const userRouter = require('./routes/userRouter.js')
-const noteRouter = require('./routes/notesRouter.js')
-const mongoose = require('mongoose')
-const path = require('path')
-const fileURLToPath = require("url")
-console.log(__filename)
-console.log("dirname", __dirname)
+
+import dotenv from 'dotenv'
+
+import express from 'express'
+import cors from 'cors';
+import userRouter from './routes/userRouter.js';
+import noteRouter from './routes/notesRouter.js';
+import mongoose from 'mongoose';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Convert the URL of the current module to a file path
+const __filename = fileURLToPath(import.meta.url);
+
+// Get the directory name of the current module
+const __dirname = path.dirname(__filename);
 const app = express();
 
 //connectDB();
+dotenv.config();
 app.use(express.json())
 app.use(cors());
 

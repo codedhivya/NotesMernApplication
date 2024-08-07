@@ -1,7 +1,9 @@
-const router = require("express").Router()
 
-const auth = require("../middlewares/auth")
-const notesCtrl = require("../controllers/noteCtrl")
+import express from 'express'
+const router = express.Router();
+import auth from '../middlewares/auth.js';
+import notesCtrl from '../controllers/noteCtrl.js';
+
 
 
 
@@ -15,4 +17,4 @@ router.route("/:id")
     .put(auth, notesCtrl.updateNote)
     .delete(auth, notesCtrl.deleteNote)
 
-module.exports = router;
+export default router;

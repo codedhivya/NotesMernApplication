@@ -1,5 +1,4 @@
-const Notes = require("../models/notesModels")
-
+import Notes from '../models/notesModels.js'
 const notesCtrl = {
 
     getNotes: async (req, res) => {
@@ -41,7 +40,7 @@ const notesCtrl = {
             res.json({ msg: "Note Deleted" })
         }
         catch (err) {
-            return res.josn({ msg: err.message })
+            return res.json({ msg: err.message })
         }
     },
     updateNote: async (req, res) => {
@@ -70,4 +69,4 @@ const notesCtrl = {
 
 
 }
-module.exports = notesCtrl;
+export default notesCtrl;
